@@ -1,0 +1,108 @@
+---
+title: "Liens vers la vignette de chaque chapitre."
+subtitle: "Links to the vignette of each chapter."
+author: "F. Bertrand, Cl. Borsenberger, Ch. Derquenne, G. Dufrénot, F. Jawadi, M. Maumy-Bertrand"
+date: "`r Sys.Date()`"
+output:
+  prettydoc::html_pretty:
+    theme: cayman
+    highlight: github
+vignette: >
+  %\VignetteIndexEntry{Liens vers les vignette de chaque chapitre.}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, echo=FALSE}
+#file.edit(normalizePath("~/.Renviron"))
+LOCAL <- identical(Sys.getenv("LOCAL"), "TRUE")
+#, eval = LOCAL for skip on CRAN test
+#LOCAL=FALSE
+#knitr::opts_chunk$set(purl = LOCAL, eval=LOCAL)
+knitr::opts_chunk$set(purl = LOCAL)
+NOT_CRAN <- identical(tolower(Sys.getenv("NOT_CRAN")), "TRUE")
+knitr::opts_chunk$set(purl = NOT_CRAN)
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+SAVE_GRAPHS=FALSE
+```
+
+<table align="center">
+        <tr>
+            <td><img src="../man/figures/9782807319448-g.jpg" align="left" width="300" style="margin:0 100px 0 0;"/></td>
+            <td><img src="../man/figures/logo.png" align="right" width="200" style="margin:0 0 0 100px;"/></td>
+        </tr>
+</table>
+
+L'objectif du package `sageR` est de fournir le code des illustrations et des exemples, ainsi que celui de fonctions addtionnelles, pour le livre *Statistiques pour l’économie et la gestion*, *Théorie et applications en entreprise*, écrit par Frédéric Bertrand, Christian Derquenne, Gilles Dufrénot, Fredj Jawadi, Myriam Maumy-Bertrand, dirigés par Claire Borsenberger, De Boeck Supérieur, Louvain-la-Neuve, 2021.
+
+
+## Installation
+
+Pour installer la dernière version du package qui a été publiée sur le [CRAN](https://CRAN.R-project.org), il suffit d'exécuter la commande suivante :
+
+``` r
+install.packages("sageR")
+```
+
+Pour installer la version de développement du package depuis [GitHub](https://github.com/), il suffit d'exécuter la commande suivante :
+
+``` r
+# install.packages("devtools")
+devtools::install_github("fbertran/sageR")
+```
+
+## Table des matières
+
+<!-- 1. [Chapitre 1. Introduction à la statistique et à son petit monde.](https://fbertran.github.io/sageR/articles/CodeChap01.html) -->
+2. [Chapitre 2. Statistique exploratoire et représentations graphiques de séries univariées.](https://fbertran.github.io/sageR/articles/CodeChap02.html) 
+3. [Chapitre 3. Statistique exploratoire et représentations graphiques de séries bivariées et multivariées.](https://fbertran.github.io/sageR/articles/CodeChap03.html) 
+<!-- 4. [Chapitre 4. Exploration des données avec l'analyse en composantes principales.](https://fbertran.github.io/sageR/articles/CodeChap04.html)  -->
+<!-- 5. [Chapitre 5. Exploration des données avec l'analyse factorielle des correspondances.](https://fbertran.github.io/sageR/articles/CodeChap05.html) -->
+<!-- 6. [Chapitre 6. Exploration des données avec l'analyse des correspondances multiples.](https://fbertran.github.io/sageR/articles/CodeChap06.html)  -->
+<!-- 7. [Chapitre 7. Exploration des données avec la classification automatique.](https://fbertran.github.io/sageR/articles/CodeChap07.html)  -->
+8. [Chapitre 8. Introduction à la théorie des probabilités aux distributions statistiques classiques.](https://fbertran.github.io/sageR/articles/CodeChap08.html)
+9. [Chapitre 9. Théorie de l'estimation, tests à un ou deux échantillons.](https://fbertran.github.io/sageR/articles/CodeChap09.html)
+<!-- 10. [Chapitre 10. Modèle linéaire gaussien.](https://fbertran.github.io/sageR/articles/CodeChap10.html) -->
+<!-- 11. [Chapitre 11. Introduction aux séries temporelles.](https://fbertran.github.io/sageR/articles/CodeChap11.html) -->
+<!-- 12. [Chapitre 12. Introduction aux modèles logit et probit.](https://fbertran.github.io/sageR/articles/CodeChap12.html) -->
+
+
+# Statistics for Economics and Management (English version)
+
+The goal of the `sageR` package is to provide code and additionnal material for the book *Statistiques pour l’économie et la gestion*, written by Frédéric Bertrand, Christian Derquenne, Gilles Dufrénot, Fredj Jawadi, Myriam Maumy-Bertrand, edited by Claire Borsenberger and published by De Boeck Supérieur, Louvain-la-Neuve, 2021.
+
+## Installation
+
+You can install the released version of sageR from [CRAN](https://CRAN.R-project.org) with:
+
+
+```r
+install.packages("sageR")
+```
+
+You can install the development version of SelectBoost from [github](https://github.com) with:
+
+
+```r
+devtools::install_github("fbertran/sageR")
+```
+
+## Contents
+
+<!-- 1. [Chapter 1. Introduction to statistics and their world.](https://fbertran.github.io/sageR/articles/CodeChap01.html) -->
+2. [Chapter 2. Univariate exploratory statistics and graphics.](https://fbertran.github.io/sageR/articles/CodeChap02.html) 
+3. [Chapter 3. Bivariate and multivariate exploratory statistics and graphics.](https://fbertran.github.io/sageR/articles/CodeChap03.html) 
+<!-- 4. [Chapter 4. Data exploration with Principal Component Analysis.](https://fbertran.github.io/sageR/articles/CodeChap04.html)  -->
+<!-- 5. [Chapter 5. Data exploration with Correspondence Analysis.](https://fbertran.github.io/sageR/articles/CodeChap05.html) -->
+<!-- 6. [Chapter 6. Data exploration with Multiple Correspondence Analysis.](https://fbertran.github.io/sageR/articles/CodeChap06.html)  -->
+<!-- 7. [Chapter 7. Data exploration with automatic clustering.](https://fbertran.github.io/sageR/articles/CodeChap07.html)  -->
+8. [Chapter 8. Introduction to probability theory and classical probability distributions.](https://fbertran.github.io/sageR/articles/CodeChap08.html)
+9. [Chapter 9. Estimation theory, one-sample and two-sample tests.](https://fbertran.github.io/sageR/articles/CodeChap09.html)
+<!-- 10. [Chapter 10. Gaussian linear model.](https://fbertran.github.io/sageR/articles/CodeChap10.html) -->
+<!-- 11. [Chapter 11. Introduction to time series.](https://fbertran.github.io/sageR/articles/CodeChap11.html) -->
+<!-- 12. [Chapter 12. Introduction to probit and logit models.](https://fbertran.github.io/sageR/articles/CodeChap12.html) -->
+
+
