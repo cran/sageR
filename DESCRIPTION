@@ -1,14 +1,15 @@
 Package: sageR
 Type: Package
 Title: Applied Statistics for Economics and Management with R
-Version: 0.3.0
-Date: 2021-07-17
+Version: 0.6.0
+Date: 2022-09-20
 Depends: R (>= 3.5.0)
 Imports: ggplot2
 Suggests: knitr, markdown, prettydoc, rmarkdown, testthat (>= 3.0.0),
         covr, learnr, spelling, lattice, spatstat.data, Matrix, mgcv,
-        PMCMR, PMCMRplus, devtools, extrafont, DescTools, GGally, VGAM,
-        car, dplyr, tibble, ggiraphExtra, scales, spatstat, vcd
+        PMCMRplus, devtools, extrafont, DescTools, GGally, VGAM, car,
+        dplyr, tibble, ggiraphExtra, scales, spatstat, vcd, FactoMineR,
+        cluster, caret, corrplot, actuar
 Authors@R: c(
 	person(given = "Frederic", family= "Bertrand", role = c("cre", "aut"), email = "frederic.bertrand@utt.fr", comment = c(ORCID = "0000-0002-0837-8281")),
 	person(given = "Claire", family= "Borsenberger", role = c("ctb"), email = "claire.borsenberger@sfr.fr"),
@@ -43,12 +44,12 @@ LazyData: true
 Config/testthat/edition: 3
 VignetteBuilder: knitr, rmarkdown
 Language: fr-FR
-RoxygenNote: 7.1.1
+RoxygenNote: 7.2.1
 URL: https://fbertran.github.io/homepage/,
         https://fbertran.github.io/sageR/,
         https://github.com/fbertran/sageR/
 BugReports: https://github.com/fbertran/sageR/issues/
 NeedsCompilation: no
-Packaged: 2021-07-18 22:14:56 UTC; fbertran
+Packaged: 2022-09-21 00:40:09 UTC; fbertran
 Repository: CRAN
-Date/Publication: 2021-07-20 07:20:05 UTC
+Date/Publication: 2022-09-21 22:20:02 UTC

@@ -1,3 +1,114 @@
+#' @title  Correction de Sheppard et variance
+#' @description Calcul de la correction de Sheppard pour la variance.
+#'
+#' @param gp.data Un objet de classe grouped.data créé avec le package `actuar`.
+#' @param order Choix de l'ordre pour la correction de Sheppard. Ne peut être égal qu'à 2 ou 4.
+#' @param population Un booléen qui indique si le calcul est réalisé à partir d'une population (`population=TRUE`) ou à partir d'un échantillon pour estimer un paramètre d'une population (`population=FALSE`).
+#' @return Un vecteur contenant la valeur de la correction de Sheppard pour le calcul de la variance d'une distribution groupée.
+#'
+#'@export
+#'@examples
+#'lims <- c(40, 45, 50, 55, 60, 65, 70, 75)
+#'counts <- c(1,2,3,4,0,0,1)
+#'grouped.example <- actuar::grouped.data(Group = lims, Frequency = counts)
+#'sheppardCorrection(grouped.example)
+#'sheppardCorrection(grouped.example, order=4)
+#'
+
+sheppardCorrection <- function(gp.data, order=2, population=FALSE) {
+  cj <- gp.data[,1]
+  nj <- gp.data[,2]
+  if(order==2){
+    corSheppard2 <- weighted.mean(diff(cj)^2,nj)/12
+    return(corSheppard2)
+  }
+  if(order==4){
+    binLength <- diff(cj)
+    midpoints <- cj[-length(cj)] + diff(cj)/2
+    midsquare <- (midpoints - mean(gp.data))^2
+    corSheppard2 <- -1*weighted.mean(diff(cj)^2,nj)/12
+    xval <- as.matrix(gp.data[-1L])
+    n <- colSums(xval)
+    sigma2 <- drop(crossprod(xval, midsquare))/(colSums(xval) - !population)
+    corSheppard4 <- -1*weighted.mean(diff(cj)^2,nj)/2*sigma2+7*weighted.mean(diff(cj)^4,nj)/240
+    return(corSheppard4)
+  }
+}
+
+#' @title  Moyenne, variance et variance corrigée (Sheppard)
+#' @description Pour une distribution groupée, cette fonction la moyenne, la variance et la variance corrigée à l'aide de la correction de Sheppard.
+#'
+#' @param gp.data Un objet de classe grouped.data créé avec le package `actuar`.
+#' @param population Un booléen qui indique si le calcul est réalisé à partir d'une population (`population=TRUE`) ou à partir d'un échantillon pour estimer un paramètre d'une population (`population=FALSE`).
+#' @return Une liste comportant trois éléments :
+#' \enumerate{
+#'   \item La moyenne de la distribution groupée \code{mu}
+#'   \item La variance de la distribution non corrigée avec la correction de Sheppard \code{sigma2}
+#'   \item La variance de la distribution corrigée avec la correction de Sheppard \code{sigma2Adj}
+#'   \item L'asymétrie de Fisher de la distribution \code{sigma2}
+#'   \item L'asymétrie de Pearson de la distribution \code{sigma2}
+#'   \item L'applatissement de Pearson de la distribution corrigée avec la correction de Sheppard \code{sigma2}
+#'   \item L'applatissement de Fisher de la distribution corrigée avec la correction de Sheppard \code{sigma2}
+#' }
+#'
+#'@export
+#'@examples
+#'lims <- c(40, 45, 50, 55, 60, 65, 70, 75)
+#'counts <- c(1,2,3,4,0,0,1)
+#'grouped.example <- actuar::grouped.data(Group = lims, Frequency = counts)
+#'moments.grouped(grouped.example)
+#'
+
+moments.grouped <- function(gp.data, population=FALSE) {
+  cj <- gp.data[,1]
+  nj <- gp.data[,2]
+  binLength <- diff(cj)
+  midpoints <- cj[-length(cj)] + diff(cj)/2
+  midsquare <- (midpoints - mean(gp.data))^2
+  midscube <- (midpoints - mean(gp.data))^3
+  midsfour <- (midpoints - mean(gp.data))^4
+
+  corSheppard2 <- -1*weighted.mean(diff(cj)^2,nj)/12
+
+  xval <- as.matrix(gp.data[-1L])
+  n <- colSums(xval)
+  mu <- drop(crossprod(xval, midpoints))/colSums(xval)
+  sigma2 <- drop(crossprod(xval, midsquare))/(colSums(xval) - !population)
+
+  corSheppard4 <- -1*weighted.mean(diff(cj)^2,nj)/2*sigma2+7*weighted.mean(diff(cj)^4,nj)/240
+
+  sigma2Adj <- sigma2 + corSheppard2
+  mom3c <- drop(crossprod(xval, midscube))/(colSums(xval) - !population)
+  asymetrie_F <- drop(crossprod(xval, midscube))/(colSums(xval) - !population)/sigma2Adj^{3/2}
+  asymetrie_P <- asymetrie_F^2
+  mom4c <- drop(crossprod(xval, midsfour))/(colSums(xval) - !population)
+  mom4cAdj <- drop(crossprod(xval, midsfour))/(colSums(xval) - !population)+corSheppard4
+  applatissement_PAdj <- mom4cAdj/sigma2Adj^2
+  applatissement_FAdj <- applatissement_PAdj-3
+  return(list(mu = mu,
+              sigma2 = sigma2,
+              sigma2Adj = sigma2Adj,
+              asymetrie_F=asymetrie_F,
+              asymetrie_P=asymetrie_P,
+              mom3c=mom3c,
+              mom4c=mom4c,
+              mom4cAdj=mom4cAdj,
+              applatissement_PAdj=applatissement_PAdj,
+              applatissement_FAdj=applatissement_FAdj#,
+#              corSheppard2=corSheppard2,
+#              corSheppard4=corSheppard4,
+#              n=n,
+#              midpoints=midpoints,
+#              binLength=binLength,
+#              cj=cj,
+#              nj=nj,
+#              midsquare=midsquare,
+#              midscube=midscube,
+#              midsfour=midsfour
+               )
+         )
+}
+
 #' @title Dotchart de Cleveland améliorés (Enhanced Cleveland's dotchart)
 #'
 #' @description dotchart3 est une version améliorée des fonctions dotchart et dotchart2 qui permettent de construire des diagrammes à points de Cleveland.
@@ -354,7 +465,7 @@ plotcdf3 <-
         zlab = "",
         cex.axis = 0.75,
         ticktype = "detailed",
-        border = border
+        border = ifelse(border,TRUE,NA)
       )
     }
     else {
@@ -372,7 +483,7 @@ plotcdf3 <-
         zlab = "",
         cex.axis = 0.75,
         ticktype = "detailed",
-        border = border
+        border = ifelse(border,TRUE,NA)
       )
     }
     invisible(list(
@@ -836,4 +947,65 @@ CalculateAxisPath <- function(var.names, min, max) {
   rownames(axisData) <- seq(1:nrow(axisData))
   # Return calculated axis paths
   as.data.frame(axisData)
+}
+
+
+#' @title Indices d'attraction/répulsion
+#'
+#' @description Fonction de calcul et de représentation des indices d'attraction/répulsion
+#'
+#' @param data Jeux de données
+#'
+#' @return Liste à un élément qui content le tableau croisé des indices.
+#' @export
+#'
+#' @examples
+#'
+#' data(champignons)
+#' champ_sel <- champignons[,c("couleur_chapeau","contusions","odeur",
+#' "espacement_lamelle","habitat")]
+#' sageR::att_rep_ind(champ_sel)
+#'
+att_rep_ind=function(data){
+  nb_var <- nrow(as.matrix(names(data)))
+  for (i in 1:nb_var)
+  {for (j in 1:nb_var)
+  {X1 <- data[,i]
+  X2 <- data[,j]
+  X <- data.frame(X1,X2)
+  tab_X <- table(X)
+  tab_X <- as.matrix(tab_X)
+  marg_X1 <- table(X1)
+  marg_X1 <- as.matrix(marg_X1)
+  marg_X2 <- table(X2)
+  marg_X2 <- as.matrix(marg_X2)
+  somme_lignes <- apply(tab_X,1,sum,na.rm=TRUE)
+  somme_colonnes <- apply(tab_X,2,sum,na.rm=TRUE)
+  n <- sum(tab_X)
+  m1 <- nrow(marg_X1)
+  m2 <- nrow(marg_X2)
+  attrac_repul <- matrix(0,nrow=m1,ncol=m2)
+  for (k in 1:m1)
+  {for (l in 1:m2)
+  {attrac_repul[k,l]=tab_X[k,l]/(somme_lignes[k]*somme_colonnes[l])*n
+  }
+  }
+  rownames(attrac_repul) <- rownames(marg_X1)
+  colnames(attrac_repul) <- rownames(marg_X2)
+  if (j == 1) {d_kl <- attrac_repul}
+  else {d_kl <- data.frame(d_kl,attrac_repul)}
+  }
+    if (i == 1) {d_kl_all <- d_kl}
+    else {d_kl_all <- rbind(d_kl_all,d_kl)}
+  }
+  for (i in 1:nrow(d_kl_all))
+  {d_kl_all[i,i]=1}
+
+  z <- as.matrix(d_kl_all)
+  x <- seq(1,nrow(d_kl_all),length.out=nrow(d_kl_all))
+  y <- seq(1,nrow(d_kl_all),length.out=nrow(d_kl_all))
+  image(x,y,z,xlab="",ylab="",main="Indices d'attraction/r\u00e9pulsion",axes=FALSE)
+  axis(1, at = x,labels = rownames(z),las=1,cex.axis=0.8)
+  axis(2, at = y,labels = colnames(z),las=2,cex.axis=0.8)
+  return(list(out_ind=d_kl_all))
 }
