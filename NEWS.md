@@ -1,3 +1,7 @@
+# sageR 0.6.1
+
+* Minor code fixes to get rid of CRAN and devel check notes.
+
 # sageR 0.6.0
 
 * Html code fix as requested by CRAN and updating examples.

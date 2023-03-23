@@ -1,8 +1,8 @@
 Package: sageR
 Type: Package
 Title: Applied Statistics for Economics and Management with R
-Version: 0.6.0
-Date: 2022-09-20
+Version: 0.6.1
+Date: 2023-03-23
 Depends: R (>= 3.5.0)
 Imports: ggplot2
 Suggests: knitr, markdown, prettydoc, rmarkdown, testthat (>= 3.0.0),
@@ -50,6 +50,6 @@ URL: https://fbertran.github.io/homepage/,
         https://github.com/fbertran/sageR/
 BugReports: https://github.com/fbertran/sageR/issues/
 NeedsCompilation: no
-Packaged: 2022-09-21 00:40:09 UTC; fbertran
+Packaged: 2023-03-23 18:08:36 UTC; fbertran
 Repository: CRAN
-Date/Publication: 2022-09-21 22:20:02 UTC
+Date/Publication: 2023-03-23 18:40:02 UTC

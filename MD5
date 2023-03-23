@@ -1,6 +1,6 @@
-1f35108b2f74d055ccd8ac5bcbcd8000 *DESCRIPTION
+9cd23e92bc780eec6c917bbf61a78dea *DESCRIPTION
 7011b74b8f5895b0684fe0f381fe264a *NAMESPACE
-d377c0f2fe8393e09863a922e9e54242 *NEWS.md
+f8de625c5b55e52535c48a22858fa06f *NEWS.md
 2135d7e4f0971c67cf7104f18baf89e7 *R/datasets.R
 121e6e0c1e853e8280006a9e39301320 *R/functions.R
 d5734ab2b2851999f225abff49ce1441 *R/sageR-package.R
@@ -34,10 +34,10 @@ b2c970c13a94603c5fe6eea223c74b8e *data/bitcoin.RData
 9bedb5a12450a015ba14e85fef8cdf39 *data/champignons.RData
 80e27f8286fe642c311ae13e05dd850f *data/conso_temp.RData
 94ff5074d51f4d4558c879d52456df95 *data/presid_2012.RData
-d0df84cd4823f1a8c1cc2457c7594d60 *inst/CITATION
+dcfac7c47ce431d3c5a8bf8f5ad52715 *inst/CITATION
 fe4f17d6701590d7c3689230e0bedbfd *inst/doc/AllLinksExtVignettes.R
 99802e53736ce1bb8f55a778e1b6313c *inst/doc/AllLinksExtVignettes.Rmd
-eec636fa2a76086fd9173eb1a729d745 *inst/doc/AllLinksExtVignettes.html
+653daf377681d422d912ae1107e1a0a2 *inst/doc/AllLinksExtVignettes.html
 549e70b3d0228e96f0349c051e944308 *man/AgevsProter_Canada_full.Rd
 de3cfbae4342148268318219414f7941 *man/AgevsSexe_Canada_full.Rd
 1f274e5ac4f3971abfc860d0bbf8c97a *man/CalculateAxisPath.Rd
@@ -83,7 +83,7 @@ c3978703d8f40f2679795335715e98f4 *man/figures/lifecycle-experimental.svg
 4b1d1f470298c54b08f7d81c093301c4 *man/ggradar.Rd
 354fdbe75a9a71d21689f471fa4fa706 *man/moments.grouped.Rd
 22a1975f27d1768e0fe4b5ced73250e6 *man/plotcdf3.Rd
-c4fca5135b2f9e8caf68786c71b9383e *man/presid_2012.Rd
+4f6551905f1f162e4ac957270cce5fb9 *man/presid_2012.Rd
 41b77e55614934dfccb7ace00a8ab9f2 *man/sageR-package.Rd
 0fb9f006679f13279efdeb62136fc8dd *man/sheppardCorrection.Rd
 ee0414d517d49ffa42ad9dd93d1951c0 *tests/testthat.R
