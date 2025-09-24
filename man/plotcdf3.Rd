@@ -87,6 +87,6 @@ Other plot functions:
 \code{\link{dotchart3}()}
 }
 \author{
-Frederic Bertrand, \email{frederic.bertrand@utt.fr}
+Frederic Bertrand, \email{frederic.bertrand@lecnam.net}
 }
 \concept{plot functions}

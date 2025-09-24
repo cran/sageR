@@ -18,14 +18,14 @@ A data frame with 96 observations on the following 13 variables.
 \code{Eure-et-Loir} \code{Finistère} \code{Gard} \code{Gers} \code{Gironde}
 \code{Haut-Rhin} \code{Haute-Corse} \code{Haute-Garonne} \code{Haute-Loire}
 \code{Haute-Marne} \code{Haute-Saône} \code{Haute-Savoie}
-\code{Haute-Vienne} \code{Hautes-Alpes} xxj1dklA5nLg7FZdXLYf58wWtjD8JgCw-44\code{Hauts-de-Seine} \code{Hérault} \code{Ille-et-Vilaine} \code{Indre}
+\code{Haute-Vienne} \code{Hautes-Alpes} 63EmpGPcTWCqJJ9Co5Nckt8kjbdX2a3j-44\code{Hauts-de-Seine} \code{Hérault} \code{Ille-et-Vilaine} \code{Indre}
 \code{Indre-et-Loire} \code{Isère} \code{Jura} \code{Landes}
 \code{Loir-et-Cher} \code{Loire} \code{Loire-Atlantique} \code{Loiret}
 \code{Lot} \code{Lot-et-Garonne} \code{Lozère} \code{Maine-et-Loire}
 \code{Manche} \code{Marne} \code{Mayenne} \code{Meurthe-et-Moselle}
 \code{Meuse} \code{Morbihan} \code{Moselle} \code{Nièvre} \code{Nord}
 \code{Oise} \code{Orne} \code{Paris} \code{Pas-de-Calais} \code{Puy-de-Dôme}
-xxj1dklA5nLg7FZdXLYf58wWtjD8JgCw-75xxj1dklA5nLg7FZdXLYf58wWtjD8JgCw-76\code{Rhône}
+63EmpGPcTWCqJJ9Co5Nckt8kjbdX2a3j-7563EmpGPcTWCqJJ9Co5Nckt8kjbdX2a3j-76\code{Rhône}
 \code{Saône-et-Loire} \code{Sarthe} \code{Savoie} \code{Seine-et-Marne}
 \code{Seine-Maritime} \code{Seine-Saint-Denis} \code{Somme} \code{Tarn}
 \code{Tarn-et-Garonne} \code{Territoire_de_Belfort} \code{Val-dOise}

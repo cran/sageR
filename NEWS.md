@@ -1,3 +1,10 @@
+# sageR 0.7.0
+
+* Maintainer address update.
+* Added unit tests.
+* Added package doi.
+* Added rhub checks.
+
 # sageR 0.6.1
 
 * Minor code fixes to get rid of CRAN and devel check notes.

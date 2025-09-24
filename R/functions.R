@@ -135,7 +135,7 @@ moments.grouped <- function(gp.data, population=FALSE) {
 #'
 #' @return Un dotplot de la série statistique.
 #' @family plot functions
-#' @author Frederic Bertrand, \email{frederic.bertrand@utt.fr}
+#' @author Frederic Bertrand, \email{frederic.bertrand@lecnam.net}
 #' @references F. Bertrand, Ch. Derquenne, G. Dufrénot, F. Jawadi and M. Maumy, C. Borsenberger editor, \emph{Statistiques pour l’économie et la gestion}, De Boeck Supérieur, Louvain-la-Neuve, 2021.
 #'
 #' @examples
@@ -316,7 +316,7 @@ dotchart3 <-
 #'
 #' @return Un stéréogramme des deux séries statistiques groupées ou des deux séries statistiques discrètes étudiées.
 #' @family plot functions
-#' @author Frederic Bertrand, \email{frederic.bertrand@utt.fr}
+#' @author Frederic Bertrand, \email{frederic.bertrand@lecnam.net}
 #' @references F. Bertrand, Ch. Derquenne, G. Dufrénot, F. Jawadi and M. Maumy, C. Borsenberger editor, \emph{Statistiques pour l’économie et la gestion}, De Boeck Supérieur, Louvain-la-Neuve, 2021.
 #'
 #' @examples

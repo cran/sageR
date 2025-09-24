@@ -4,6 +4,8 @@
 
 # Statistiques pour l’économie et la gestion 
 
+<https://doi.org/10.32614/CRAN.package.sageR>
+
 
 <table align="center">
         <tr>
@@ -18,6 +20,7 @@
 
 
 <!-- badges: start -->
+[![DOI](https://img.shields.io/badge/doi-10.32614/CRAN.package.sageR-blue.svg)](https://doi.org/10.32614/CRAN.package.sageR)
 [![Lifecycle: stable](https://img.shields.io/badge/lifecycle-stable-green.svg)](https://lifecycle.r-lib.org/articles/stages.html)
 [![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 [![R-CMD-check](https://github.com/fbertran/sageR/workflows/R-CMD-check/badge.svg)](https://github.com/fbertran/sageR/actions)
@@ -25,7 +28,6 @@
 [![CRAN status](https://www.r-pkg.org/badges/version/sageR)](https://CRAN.R-project.org/package=sageR)
 [![CRAN RStudio mirror downloads](https://cranlogs.r-pkg.org/badges/sageR)](https://cran.r-project.org/package=sageR)
 [![GitHub Repo stars](https://img.shields.io/github/stars/fbertran/sageR?style=social)](https://github.com/fbertran/sageR)
-[![DOI](https://zenodo.org/badge/334767259.svg)](https://zenodo.org/badge/latestdoi/334767259)
 <!-- badges: end -->
 
 

@@ -3,6 +3,8 @@ citHeader("To cite the sageR package in publications use:")
 titl <- meta$Title
 year <- sub(".*(2[[:digit:]]{3})-.*", "\\1", meta$Date)
 vers <- paste("R package version", meta$Version)
+doi <- paste0("10.32614/CRAN.package.", meta$Package)
+urldoi <- paste0("https://doi.org/", doi)
 
 bibentry(bibtype="Manual",
          title = titl,
@@ -17,7 +19,7 @@ bibentry(bibtype="Manual",
          note         = vers,
          url          = "https://fbertran.github.io/sageR/",
          textVersion  = paste("F. Bertrand, Cl. Borsenberger, Ch. Derquenne, G. Dufrénot, F. Jawadi, M. Maumy (",year ,"). ",
-                 titl, ", ", vers, ".", sep=""
+                 titl, ", ", vers, ". doi:", doi, ".", sep=""
            )
 )
 
